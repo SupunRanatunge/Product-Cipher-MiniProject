@@ -7,8 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.awt.List;
+
 
 /**
  *
@@ -21,6 +20,7 @@ public class CipherMethods {
     int j;
     int k;
     int m;
+    int x;
     int numb;
     int number;
     String test="";
@@ -65,6 +65,7 @@ public class CipherMethods {
         
         }
         System.out.println("Encrypted content:    "+test);
+        System.out.println("Encrypted content:    "+output);
         
         
         PrintWriter writer = new PrintWriter("Encrypted.txt", "UTF-8");
@@ -74,9 +75,19 @@ public class CipherMethods {
         return output;
     }
     
-//    public void permutation_txt(ArrayList output,int key){
-//        
-//    }
+    public void permutation_txt(ArrayList output,int key){
+        int rest = (key-(output.size()%key));
+        if (output.size()%key != 0) {
+            for (x=0;x<rest;x++){
+                output.add('x');
+                System.out.println(output);
+                
+            }
+            
+            
+              
+        }
+    }
     
     public void dec_substitute_txt(String line,int key){
         
